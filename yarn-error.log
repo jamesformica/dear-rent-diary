@@ -1,0 +1,56 @@
+Arguments: 
+  /Users/james.formica/.nvm/versions/node/v10.3.0/bin/node /usr/local/Cellar/yarn/1.7.0/libexec/bin/yarn.js
+
+PATH: 
+  /Users/james.formica/.rvm/gems/ruby-2.1.4/bin:/Users/james.formica/.rvm/gems/ruby-2.1.4@global/bin:/Users/james.formica/.rvm/rubies/ruby-2.1.4/bin:/Users/james.formica/.nvm/versions/node/v10.3.0/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/james.formica/.rvm/bin:/Library/PostgreSQL/9.6/bin
+
+Yarn version: 
+  1.7.0
+
+Node version: 
+  10.3.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/james.formica/Code/dear-rent-diary/package.json: Unexpected token } in JSON at position 649
+      at JSON.parse (<anonymous>)
+      at /usr/local/Cellar/yarn/1.7.0/libexec/lib/cli.js:1130:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/Cellar/yarn/1.7.0/libexec/lib/cli.js:98:30)
+      at /usr/local/Cellar/yarn/1.7.0/libexec/lib/cli.js:109:13
+
+npm manifest: 
+  {
+    "name": "dear-rent-diary",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "devDependencies": {
+      "babel-core": "^6.26.3",
+      "babel-eslint": "^8.2.6",
+      "babel-preset-airbnb": "^2.5.3",
+      "babel-preset-stage-1": "^6.24.1",
+      "cssnano": "^4.0.5",
+      "eslint": "^5.3.0",
+      "eslint-config-airbnb": "^17.0.0",
+      "eslint-plugin-import": "^2.13.0",
+      "eslint-plugin-jsx-a11y": "^6.1.1",
+      "eslint-plugin-react": "^7.10.0",
+      "gh-pages": "^1.2.0",
+      "parcel-bundler": "^1.9.7"
+    },
+    "dependencies": {
+      "lodash": "^4.17.10",
+      "prop-types": "^15.6.2",
+      "react": "^16.4.2",
+      "react-dom": "^16.4.2",
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
