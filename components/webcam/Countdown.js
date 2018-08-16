@@ -43,7 +43,7 @@ class Countdown extends Component {
     return (
       <div className="Countdown">
         {status !== 'FLASH' && (
-          <h2 className="Countdown__number">
+          <h2 className={`Countdown__number-${status.toLowerCase()}`}>
             {status === 'THREE' && '3'}
             {status === 'TWO' && '2'}
             {status === 'ONE' && '1!'}

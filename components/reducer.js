@@ -10,7 +10,7 @@ const statuses = {
 }
 
 const resetCurrent = () => ({
-  dateTime: moment().format('MMMM Do YYYY, h:mm:ss a'),
+  dateTime: moment().format('MMMM Do YYYY, h:mm a'),
   sentences: getParagraph(),
   fillers: [],
 })

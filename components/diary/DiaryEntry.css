@@ -6,6 +6,11 @@
   margin-bottom: 2.5rem;
 }
 
+.DiaryEntry__typist {
+  display: inline;
+  word-break: break-word;
+}
+
 .DiaryEntry__date {
   display: block;
   font-size: 1.25rem;

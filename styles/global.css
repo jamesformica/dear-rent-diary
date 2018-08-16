@@ -4,5 +4,10 @@
 
 body {
   margin: 0;
+  background: radial-gradient(black, white);
+}
+
+body,
+button {
   font-family: 'Kalam', cursive;
 }

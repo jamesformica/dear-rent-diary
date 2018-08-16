@@ -1,6 +1,7 @@
 import reduce from 'lodash/reduce'
-import maxBy from 'lodash/maxBy'
 import sample from 'lodash/sample'
+import sortBy from 'lodash/sortBy'
+import filer from 'lodash/filter'
 import get from 'lodash/get'
 
 import * as emotionFillers from '../fillers'
@@ -35,7 +36,16 @@ const getHighestEmotion = (emotions) => {
     return result
   }, [])
 
-  return maxBy(scores, 'score')
+  const sortedScores = sortBy(scores, 'score').reverse()
+
+  if (sortedScores[0].score >= 0.9) {
+    return sortedScores[0]
+  }
+
+  const threshold = sortedScores[0].score - 0.2
+  const closeScores = filer(sortedScores, s => s.score >= threshold)
+  // pick by random
+  return sample(closeScores)
 }
 
 const getFiller = (emotion) => {
@@ -43,7 +53,7 @@ const getFiller = (emotion) => {
 }
 
 const getAdjective = (emotion) => {
-  if (emotion.score < 0.5) return ''
+  if (emotion.score < 0.75) return ''
   return sample(emotionFillers.adjectives)
 }
 
@@ -59,7 +69,8 @@ export const analyse = (imageSrc, onSubmitFiller, onRetry) => {
     response.json()
   )).then((response) => {
     if (!get(response, '[0].faceAttributes.emotion', null)) {
-      return onRetry()
+      onRetry()
+      return
     }
 
     const emotions = response[0].faceAttributes.emotion

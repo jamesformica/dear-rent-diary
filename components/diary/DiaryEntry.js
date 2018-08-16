@@ -82,7 +82,7 @@ const DiaryEntry = ({ entry, onTypingDone }) => {
         <Fragment>
           {getProcessed(entry)}
 
-          <Typist key={next.key} onTypingDone={onTypingDone}>
+          <Typist className="DiaryEntry__typist" key={next.key} onTypingDone={onTypingDone}>
             {next.elements}
           </Typist>
         </Fragment>
