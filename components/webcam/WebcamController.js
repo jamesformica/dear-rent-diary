@@ -43,6 +43,7 @@ class WebcamController extends Component {
             ref={this.setRef}
             width={400}
             height={400}
+            className="Webcam__video"
             screenshotFormat="image/jpeg"
             videoConstraints={videoConstraints}
           />

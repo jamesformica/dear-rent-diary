@@ -26,6 +26,10 @@
   border-bottom-left-radius: 3px;
 }
 
+.Webcam__video {
+  filter: sepia(0.2) hue-rotate(-5deg) brightness(1.1);
+}
+
 .Webcam__image {
   position: absolute;
   top: 0;
