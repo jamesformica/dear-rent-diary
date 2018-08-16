@@ -1,0 +1,43 @@
+.DiaryEntry {
+  /* background: white; */
+  font-size: 1.125rem;
+}
+
+.DiaryEntry__date {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+[class^="Diary__text-"] {
+  font-weight: bold;
+}
+
+.Diary__text-anger {
+  color: crimson;
+}
+
+.Diary__text-contempt {
+  color: grey;
+}
+
+.Diary__text-disgust {
+  color: darkolivegreen;
+}
+
+.Diary__text-fear {
+  color: purple;
+}
+
+.Diary__text-happiness {
+  color: orange;
+}
+
+.Diary__text-sadness {
+  color: midnightblue;
+}
+
+.Diary__text-surprise {
+  color: deeppink;
+}

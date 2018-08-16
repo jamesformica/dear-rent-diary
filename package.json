@@ -3,6 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --public-url /Lindenmayer-Aquarium/",
+    "lint": "yarn eslint .",
+    "predeploy": "yarn lint && yarn build",
+    "deploy": "yarn gh-pages -d dist"
+  },
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.6",
@@ -19,8 +26,13 @@
   },
   "dependencies": {
     "lodash": "^4.17.10",
+    "moment": "^2.22.2",
     "prop-types": "^15.6.2",
     "react": "^16.4.2",
-    "react-dom": "^16.4.2"
+    "react-dom": "^16.4.2",
+    "react-redux": "^5.0.7",
+    "react-typist": "^2.0.4",
+    "react-webcam": "^1.0.1",
+    "redux": "^4.0.0"
   }
 }

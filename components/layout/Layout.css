@@ -1,0 +1,7 @@
+.Layout {
+  height: 100vh;
+  display: grid;
+  grid-template-areas: "diary webcam";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100vh;
+}
