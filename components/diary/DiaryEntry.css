@@ -1,6 +1,9 @@
 .DiaryEntry {
-  /* background: white; */
   font-size: 1.125rem;
+}
+
+.DiaryEntry-completed {
+  margin-bottom: 2.5rem;
 }
 
 .DiaryEntry__date {

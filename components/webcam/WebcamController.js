@@ -3,7 +3,7 @@ import Webcam from 'react-webcam'
 import { connect } from 'react-redux'
 
 import Countdown from './Countdown'
-import { beginProcessing, submitFiller } from '../actions'
+import { beginProcessing, beginCountdown, submitFiller } from '../actions'
 import { analyse } from './webcamHelpers'
 import './WebcamController.css'
 
@@ -26,10 +26,10 @@ class WebcamController extends Component {
 
   capture() {
     const imageSrc = this.webCamElement.getScreenshot()
-    const { onBeginProcessing, onSubmitFiller } = this.props
+    const { onBeginCountdown, onBeginProcessing, onSubmitFiller } = this.props
 
     onBeginProcessing(imageSrc)
-    analyse(imageSrc, onSubmitFiller)
+    analyse(imageSrc, onSubmitFiller, onBeginCountdown)
   }
 
   render() {
@@ -67,6 +67,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = {
+  onBeginCountdown: beginCountdown,
   onBeginProcessing: beginProcessing,
   onSubmitFiller: submitFiller,
 }

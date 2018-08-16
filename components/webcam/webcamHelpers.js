@@ -1,6 +1,7 @@
 import reduce from 'lodash/reduce'
 import maxBy from 'lodash/maxBy'
 import sample from 'lodash/sample'
+import get from 'lodash/get'
 
 import * as emotionFillers from '../fillers'
 
@@ -46,7 +47,7 @@ const getAdjective = (emotion) => {
   return sample(emotionFillers.adjectives)
 }
 
-export const analyse = (imageSrc, onSubmitFiller) => {
+export const analyse = (imageSrc, onSubmitFiller, onRetry) => {
   global.fetch(API_ENDPOINT, {
     method: 'POST',
     headers: {
@@ -57,6 +58,10 @@ export const analyse = (imageSrc, onSubmitFiller) => {
   }).then(response => (
     response.json()
   )).then((response) => {
+    if (!get(response, '[0].faceAttributes.emotion', null)) {
+      return onRetry()
+    }
+
     const emotions = response[0].faceAttributes.emotion
     const highestEmotion = getHighestEmotion(emotions)
     const filler = getFiller(highestEmotion)

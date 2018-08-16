@@ -75,7 +75,7 @@ const DiaryEntry = ({ entry, onTypingDone }) => {
   const next = getNextSentence(entry)
 
   return (
-    <div className="DiaryEntry">
+    <div className={`DiaryEntry${completed ? '-completed' : ''}`}>
       {completed && getCompletedSentence(entry)}
 
       {!completed && (

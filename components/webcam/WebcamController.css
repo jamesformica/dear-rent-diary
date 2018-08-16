@@ -1,5 +1,6 @@
 .Webcam__polaroid {
   position: relative;
+  background: black;
   border-top: 1.5rem solid white;
   border-left: 1.5rem solid white;
   border-right: 1.5rem solid white;
