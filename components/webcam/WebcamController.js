@@ -55,6 +55,10 @@ class WebcamController extends Component {
         {status === 'COUNTDOWN' && (
           <Countdown onCountdown={this.capture} />
         )}
+
+        <span className="Webcam__love" role="img" aria-label="made with love by James Formica">
+          Made with ❤️ by James Formica
+        </span>
       </Fragment>
     )
   }

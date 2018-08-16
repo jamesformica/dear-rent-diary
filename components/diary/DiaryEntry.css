@@ -1,8 +1,9 @@
 .DiaryEntry {
-  font-size: 1.125rem;
+  font-size: 1.5rem;
 }
 
 .DiaryEntry-completed {
+  font-size: 1rem;
   margin-bottom: 2.5rem;
 }
 
@@ -19,33 +20,34 @@
 }
 
 [class^="Diary__text-"] {
-  font-weight: bold;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
 }
 
 .Diary__text-anger {
-  color: crimson;
+  border-bottom-color: crimson;
 }
 
 .Diary__text-contempt {
-  color: grey;
+  border-bottom-color: grey;
 }
 
 .Diary__text-disgust {
-  color: darkolivegreen;
+  border-bottom-color: darkolivegreen;
 }
 
 .Diary__text-fear {
-  color: purple;
+  border-bottom-color: purple;
 }
 
 .Diary__text-happiness {
-  color: orange;
+  border-bottom-color: orange;
 }
 
 .Diary__text-sadness {
-  color: midnightblue;
+  border-bottom-color: midnightblue;
 }
 
 .Diary__text-surprise {
-  color: deeppink;
+  border-bottom-color: deeppink;
 }

@@ -82,4 +82,5 @@ export const adjectives = [
   'insanely',
   'intensely',
   'strongly',
+  'bloody',
 ]

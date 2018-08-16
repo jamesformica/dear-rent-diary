@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import './Countdown.css'
 
+const TIMER = 800
+
 class Countdown extends Component {
   constructor() {
     super()
@@ -23,19 +25,19 @@ class Countdown extends Component {
 
     switch (status) {
       case 'THREE': {
-        setTimeout(() => this.updateStatus('TWO'), 500)
+        setTimeout(() => this.updateStatus('TWO'), TIMER)
         break
       }
       case 'TWO': {
-        setTimeout(() => this.updateStatus('ONE'), 500)
+        setTimeout(() => this.updateStatus('ONE'), TIMER)
         break
       }
       case 'ONE': {
-        setTimeout(() => this.updateStatus('FLASH'), 500)
+        setTimeout(() => this.updateStatus('FLASH'), TIMER)
         break
       }
       default: {
-        setTimeout(() => this.takePhoto(), 500)
+        setTimeout(() => this.takePhoto(), TIMER)
         break
       }
     }

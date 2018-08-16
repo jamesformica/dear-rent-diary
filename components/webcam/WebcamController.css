@@ -34,3 +34,10 @@
   height: 100%;
   filter: grayscale(0.9) brightness(1.1);
 }
+
+.Webcam__love {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+}

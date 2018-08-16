@@ -10,7 +10,7 @@ const Diary = () => (
   <div className="Diary" style={{ background: `url('${leather}')` }}>
     <h1 className="Diary__title">Dear Rent Diary!</h1>
     <div className="Diary__paper">
-      <span className="Diary__paper-number">{moment().format('D')}</span>
+      <span className="Diary__paper-number">{moment().format('Do MMM')}</span>
       <PreviousEntries />
       <DiaryController />
     </div>

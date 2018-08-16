@@ -1,13 +1,20 @@
 import random from 'lodash/random'
 
-
 const emotion = () => null
 const process = sentence => sentence
 
 const sentences = [
-  process`Today I woke up feeling ${emotion}.`,
+  process`Today I woke up feeling ${emotion} just like every other day.`,
   process`I just met my landlord for the first time, he seems like a ${emotion} type of guy.`,
-  process`Whenever I see my roommate's face, I feel so ${emotion} inside.`,
+  process`Whenever I see my roommate's face, I feel ${emotion} inside.`,
+  process`I feel ${emotion} when my roomates leave their dishes on the sink.`,
+  process`I was ${emotion} when I found out I was gonna lose my bond.`,
+  process`I was ${emotion} when I found out I was gonna get my bond back.`,
+  process`When my best friend came over I was ${emotion} to see them again.`,
+  process`I was ${emotion} when my dog took a shit on the carpet.`,
+  process`I totally felt ${emotion} when our rent price got hiked 10%.`,
+  process`I got ${emotion} when I saw the mould growing in the corner of the room.`,
+  process`I was totally ${emotion} when my roommates ate my food in the fridge.`,
 ]
 
 export const getParagraph = () => {
