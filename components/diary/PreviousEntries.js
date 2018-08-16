@@ -22,7 +22,7 @@ class PreviousEntries extends Component {
 
     return (
       <div className="Previous">
-        {previous.map(p => <DiaryEntry entry={p} />)}
+        {previous.map(p => <DiaryEntry entry={p} key={p.dateTime} />)}
         <div ref={(el) => { this.el = el }} />
       </div>
     )

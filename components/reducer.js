@@ -19,6 +19,7 @@ const initialState = {
   status: statuses.WAITING,
   previous: [],
   current: resetCurrent(),
+  image: null,
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -33,9 +34,9 @@ const rootReducer = (state = initialState, action) => {
     case 'BEGIN_TYPING':
       return { ...state, status: statuses.TYPING }
     case 'BEGIN_COUNTDOWN':
-      return { ...state, status: statuses.COUNTDOWN }
+      return { ...state, image: null, status: statuses.COUNTDOWN }
     case 'BEGIN_PROCESSING':
-      return { ...state, status: statuses.PROCESSING }
+      return { ...state, image: action.payload, status: statuses.PROCESSING }
     case 'SUBMIT_FILLER': {
       const newState = { ...state }
       newState.current.fillers.push(action.payload)

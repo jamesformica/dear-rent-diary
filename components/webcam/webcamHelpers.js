@@ -46,7 +46,7 @@ const getAdjective = (emotion) => {
   return sample(emotionFillers.adjectives)
 }
 
-export const analyse = (imageSrc, onBeginProcessing, onSubmitFiller) => {
+export const analyse = (imageSrc, onSubmitFiller) => {
   global.fetch(API_ENDPOINT, {
     method: 'POST',
     headers: {
@@ -57,15 +57,12 @@ export const analyse = (imageSrc, onBeginProcessing, onSubmitFiller) => {
   }).then(response => (
     response.json()
   )).then((response) => {
-    onBeginProcessing()
-
     const emotions = response[0].faceAttributes.emotion
     const highestEmotion = getHighestEmotion(emotions)
     const filler = getFiller(highestEmotion)
     const adjective = getAdjective(highestEmotion)
 
     const finalFiller = `${adjective ? `${adjective} ` : ''}${filler}`
-
     onSubmitFiller({ ...highestEmotion, filler: finalFiller })
   })
 }

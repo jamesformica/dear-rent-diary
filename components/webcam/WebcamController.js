@@ -5,9 +5,12 @@ import { connect } from 'react-redux'
 import Countdown from './Countdown'
 import { beginProcessing, submitFiller } from '../actions'
 import { analyse } from './webcamHelpers'
+import './WebcamController.css'
 
 const videoConstraints = {
   facingMode: 'user',
+  width: 400,
+  height: 400,
 }
 
 class WebcamController extends Component {
@@ -25,21 +28,29 @@ class WebcamController extends Component {
     const imageSrc = this.webCamElement.getScreenshot()
     const { onBeginProcessing, onSubmitFiller } = this.props
 
-    analyse(imageSrc, onBeginProcessing, onSubmitFiller)
+    onBeginProcessing(imageSrc)
+    analyse(imageSrc, onSubmitFiller)
   }
 
   render() {
-    const { status } = this.props
+    const { status, image } = this.props
 
     return (
       <Fragment>
-        <Webcam
-          audio={false}
-          ref={this.setRef}
-          screenshotFormat="image/jpeg"
-          videoConstraints={videoConstraints}
-          style={{ transform: 'scaleX(-1)' }}
-        />
+        <div className="Webcam__polaroid">
+          <Webcam
+            audio={false}
+            ref={this.setRef}
+            width={400}
+            height={400}
+            screenshotFormat="image/jpeg"
+            videoConstraints={videoConstraints}
+          />
+
+          {!!image && (
+            <img className="Webcam__image" src={image} alt="emotion" />
+          )}
+        </div>
 
         {status === 'COUNTDOWN' && (
           <Countdown onCountdown={this.capture} />
@@ -50,7 +61,9 @@ class WebcamController extends Component {
 }
 
 const mapStateToProps = state => ({
+  image: state.image,
   status: state.status,
+  lastImage: state.image,
 })
 
 const mapDispatchToProps = {

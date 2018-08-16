@@ -1,0 +1,34 @@
+.Webcam__polaroid {
+  position: relative;
+  border-top: 1.5rem solid white;
+  border-left: 1.5rem solid white;
+  border-right: 1.5rem solid white;
+  border-bottom: 6.5rem solid white;
+  width: 400px;
+  height: 400px;
+  box-sizing: content-box;
+  transform: rotate(-5deg) translateX(2rem) translateY(1rem) scaleX(-1);
+  box-shadow: 2px 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.Webcam__polaroid:after {
+  content: '';
+  position: absolute;
+  top: -3rem;
+  left: 30%;
+  width: 120px;
+  height: 40px;
+  background: repeating-linear-gradient(45deg, #606dbc, #606dbc 10px, #465298 10px, #465298 20px);
+  transform: rotate(3deg);
+  border: 0;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.Webcam__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
