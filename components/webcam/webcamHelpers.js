@@ -1,5 +1,6 @@
 import reduce from 'lodash/reduce'
-import sample from 'lodash/sample'
+import remove from 'lodash/remove'
+import shuffle from 'lodash/shuffle'
 import sortBy from 'lodash/sortBy'
 import filer from 'lodash/filter'
 import get from 'lodash/get'
@@ -36,25 +37,28 @@ const getHighestEmotion = (emotions) => {
     return result
   }, [])
 
+  // boring result so remove it (totally skewing the result i know)
+  remove(scores, s => s.emotion === 'neutral')
+
   const sortedScores = sortBy(scores, 'score').reverse()
 
   if (sortedScores[0].score >= 0.9) {
     return sortedScores[0]
   }
 
-  const threshold = sortedScores[0].score - 0.2
+  const threshold = sortedScores[0].score - 0.05
   const closeScores = filer(sortedScores, s => s.score >= threshold)
   // pick by random
-  return sample(closeScores)
+  return shuffle(closeScores)[0]
 }
 
 const getFiller = (emotion) => {
-  return sample(emotionFillers[emotion.emotion])
+  return shuffle(emotionFillers[emotion.emotion])[0]
 }
 
 const getAdjective = (emotion) => {
-  if (emotion.score < 0.75) return ''
-  return sample(emotionFillers.adjectives)
+  if (emotion.score < 0.8) return ''
+  return shuffle(emotionFillers.adjectives)[0]
 }
 
 export const analyse = (imageSrc, onSubmitFiller, onRetry) => {
@@ -79,6 +83,12 @@ export const analyse = (imageSrc, onSubmitFiller, onRetry) => {
     const adjective = getAdjective(highestEmotion)
 
     const finalFiller = `${adjective ? `${adjective} ` : ''}${filler}`
-    onSubmitFiller({ ...highestEmotion, filler: finalFiller })
+    onSubmitFiller({
+      filler: {
+        ...highestEmotion,
+        filler: finalFiller,
+      },
+      src: imageSrc,
+    })
   })
 }

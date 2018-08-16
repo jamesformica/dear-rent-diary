@@ -1,7 +1,5 @@
 export const neutral = [
-  'meh',
-  'indifferent',
-  'blah blah blah',
+  'you should never see this!!!',
 ]
 
 export const anger = [
@@ -39,11 +37,11 @@ export const happiness = [
   'joyous',
   'stoked',
   'cheerful',
-  'content',
   'elated',
   'cheery',
   'merry',
   'jolly',
+  'content',
   'gleeful',
   'delightful',
 ]
@@ -83,4 +81,5 @@ export const adjectives = [
   'intensely',
   'strongly',
   'bloody',
+  'totally',
 ]

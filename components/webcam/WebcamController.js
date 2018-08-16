@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import Webcam from 'react-webcam'
+import last from 'lodash/last'
 import { connect } from 'react-redux'
 
 import Countdown from './Countdown'
@@ -28,12 +29,12 @@ class WebcamController extends Component {
     const imageSrc = this.webCamElement.getScreenshot()
     const { onBeginCountdown, onBeginProcessing, onSubmitFiller } = this.props
 
-    onBeginProcessing(imageSrc)
+    onBeginProcessing()
     analyse(imageSrc, onSubmitFiller, onBeginCountdown)
   }
 
   render() {
-    const { status, image } = this.props
+    const { status, images } = this.props
 
     return (
       <Fragment>
@@ -48,8 +49,8 @@ class WebcamController extends Component {
             videoConstraints={videoConstraints}
           />
 
-          {!!image && (
-            <img className="Webcam__image" src={image} alt="emotion" />
+          {(images.length > 0 && status !== 'COUNTDOWN') && (
+            <img className="Webcam__image" src={last(images)} alt="emotion" />
           )}
         </div>
 
@@ -66,7 +67,7 @@ class WebcamController extends Component {
 }
 
 const mapStateToProps = state => ({
-  image: state.image,
+  images: state.current.images,
   status: state.status,
   lastImage: state.image,
 })

@@ -2,3 +2,24 @@
   flex-basis: 70%;
   overflow: auto;
 }
+
+.Previous__gallery {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.Previous__image {
+  position: relative;
+  width: 20%;
+  border-top: 0.5rem solid white;
+  border-left: 0.5rem solid white;
+  border-right: 0.5rem solid white;
+  border-bottom: 1.5rem solid white;
+  filter: grayscale(0.9) brightness(1.1);
+  transform: scaleX(-1);
+  box-shadow: -1px 1px 4px rgba(0,0,0,0.2);
+}

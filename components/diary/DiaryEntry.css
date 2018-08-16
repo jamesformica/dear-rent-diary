@@ -4,7 +4,6 @@
 
 .DiaryEntry-completed {
   font-size: 1rem;
-  margin-bottom: 2.5rem;
 }
 
 .DiaryEntry__typist {
@@ -13,7 +12,6 @@
 }
 
 .DiaryEntry__date {
-  display: block;
   font-size: 1.25rem;
   font-weight: bold;
   margin-bottom: 0.5rem;

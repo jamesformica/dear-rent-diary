@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 
 import DiaryEntry from './DiaryEntry'
@@ -22,7 +22,16 @@ class PreviousEntries extends Component {
 
     return (
       <div className="Previous">
-        {previous.map(p => <DiaryEntry entry={p} key={p.dateTime} />)}
+        {previous.map(p => (
+          <Fragment>
+            <DiaryEntry entry={p} key={p.dateTime} />
+            <div className="Previous__gallery">
+              {p.images.map((image, i) => (
+                <img className="Previous__image" src={image} key={i.toString()} alt="someones face" />
+              ))}
+            </div>
+          </Fragment>
+        ))}
         <div ref={(el) => { this.el = el }} />
       </div>
     )

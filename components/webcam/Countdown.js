@@ -37,8 +37,8 @@ class Countdown extends Component {
         break
       }
       default: {
-        setTimeout(() => this.takePhoto(), TIMER)
-        break
+        this.takePhoto()
+        return null
       }
     }
 

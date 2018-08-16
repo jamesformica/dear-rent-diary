@@ -21,7 +21,11 @@ const processText = (text) => {
 }
 
 const getDateTime = text => (
-  <span className="DiaryEntry__date" key={getKey(text)}>{text}</span>
+  <span className="DiaryEntry__date" key={getKey(text)}>{text}<br /></span>
+)
+
+const getIntroText = () => (
+  <span className="Diary__text" key={getKey('dear')}>Dear diary, </span>
 )
 
 const getBasicText = text => (
@@ -37,6 +41,7 @@ const getProcessed = (entry) => {
 
   const texts = [
     getDateTime(entry.dateTime),
+    getIntroText(),
   ]
 
   for (let i = 0; i < entry.fillers.length; i += 1) {
@@ -56,6 +61,7 @@ const getNextSentence = (entry) => {
 
   if (entry.fillers.length === 0) {
     texts.push(getDateTime(entry.dateTime))
+    texts.push(getIntroText())
   } else {
     const filler = entry.fillers[entry.fillers.length - 1]
     texts.push(getEmotionText(filler.filler, filler.emotion))
@@ -70,6 +76,7 @@ const getNextSentence = (entry) => {
 const getCompletedSentence = (entry) => {
   const texts = [
     getDateTime(entry.dateTime),
+    getIntroText(),
   ]
 
   for (let i = 0; i < entry.sentences.length; i += 1) {

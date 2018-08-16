@@ -24,7 +24,7 @@
   position: relative;
   flex-grow: 1;
   margin: 1.5rem 0rem 1.5rem 4rem;
-  padding: 1.5rem;
+  padding: 1.5rem 2.5rem 2.5rem 2.5rem;
   background: repeating-linear-gradient(0deg, lightgrey 1px, lightgrey 2px, antiquewhite 1px, antiquewhite 2rem);
   border-top-left-radius: 2px;
   border-bottom-left-radius: 2px;
