@@ -106,7 +106,7 @@ const DiaryEntry = ({ entry, onTypingDone }) => {
           <Typist
             key={next.key}
             className="DiaryEntry__typist"
-            avgTypingDelay={100}
+            avgTypingDelay={80}
             onTypingDone={onTypingDone}
           >
             {next.elements}

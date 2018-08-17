@@ -23,6 +23,10 @@ const sentences = [
   process`My roommate forgot to pay the power bill so I'm ${emotion} and sitting in the dark.`,
   process`Wooo my rental application got accepted!!! I am ${emotion} right now.`,
   process`Current mood: ${emotion}, thanks to the water not working anymore.`,
+  process`The construction crew starting at 6:00am is making me ${emotion} every day.`,
+  process`My mum just kicked me out and now I need to find a rental, totally feeling ${emotion} today.`,
+  process`Apparently the internet won't get connect for 2 weeks so I'm ${emotion} right now.`,
+  process`My new housemate is actually normal for once, feeling ${emotion} about this.`,
 ]
 
 export const getParagraph = () => {

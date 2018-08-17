@@ -52,9 +52,7 @@ const getHighestEmotion = (emotions) => {
   return shuffle(closeScores)[0]
 }
 
-const getFiller = (emotion) => {
-  return shuffle(emotionFillers[emotion.emotion])[0]
-}
+const getFiller = emotion => shuffle(emotionFillers[emotion.emotion])[0]
 
 const getAdjective = (emotion) => {
   if (emotion.score < 0.8) return ''
