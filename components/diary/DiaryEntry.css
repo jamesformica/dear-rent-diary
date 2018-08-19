@@ -23,7 +23,7 @@
 }
 
 .Diary__text-anger {
-  border-bottom-color: crimson;
+  border-bottom-color: orangered;
 }
 
 .Diary__text-contempt {
@@ -31,15 +31,15 @@
 }
 
 .Diary__text-disgust {
-  border-bottom-color: darkolivegreen;
+  border-bottom-color: limegreen;
 }
 
 .Diary__text-fear {
-  border-bottom-color: purple;
+  border-bottom-color: blueviolet;
 }
 
 .Diary__text-happiness {
-  border-bottom-color: orange;
+  border-bottom-color: lightskyblue;
 }
 
 .Diary__text-sadness {
@@ -47,5 +47,5 @@
 }
 
 .Diary__text-surprise {
-  border-bottom-color: deeppink;
+  border-bottom-color: hotpink;
 }

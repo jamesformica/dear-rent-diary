@@ -19,8 +19,9 @@ export const contempt = [
 ]
 
 export const disgust = [
-  'disguested',
+  'disgusted',
   'replused',
+  'horrified',
 ]
 
 export const fear = [
@@ -63,11 +64,11 @@ export const sadness = [
 export const surprise = [
   'shocked',
   'surprised',
-  'astonished',
   'amazed',
   'startled',
   'flabbergasted',
   'dumbfounded',
+  'astonished',
 ]
 
 export const adjectives = [

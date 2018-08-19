@@ -9,7 +9,7 @@ import './DiaryController.css'
 
 const onFinishTyping = (current, onBeginCountdown, onBeginWaiting) => () => {
   if (current.fillers.length + 1 >= current.sentences.length) {
-    setTimeout(onBeginWaiting, 5000)
+    setTimeout(onBeginWaiting, 3000)
   } else {
     onBeginCountdown()
   }
